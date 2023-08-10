@@ -32,8 +32,8 @@ jobs:
     - name: Build solution
       run: msbuild cex2string.sln -t:rebuild -property:Configuration=Release -property:AllowUnsafeBlocks=True
 
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v3
       if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
       with:
         name: cex2string
-        path: cex2string.sln
+        path: cex2string
