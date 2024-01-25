@@ -14,8 +14,8 @@ namespace cex2string
         public static ModuleDefMD module;
         static void Main(string[] args)
         {
-            asm = Assembly.LoadFrom(@"path");
-            module = StringFixer(ModuleDefMD.Load(@"path"));
+            asm = Assembly.LoadFrom(args[0]);
+            module = StringFixer(ModuleDefMD.Load(args[0]));
             SaveAssembly(module, "_fixed");
 
             Console.ReadKey();
